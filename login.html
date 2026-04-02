@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login | GAN Face Generation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+        body{scroll-behavior:smooth;}
+
+        nav{
+            position:fixed;
+            width:100%;
+            background:rgba(0,0,0,0.85);
+            padding:15px 40px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            z-index:1000;
+        }
+
+        nav h2, nav a{color:#fff;text-decoration:none;}
+        nav ul{list-style:none;display:flex;gap:20px;}
+
+        section{min-height:100vh;padding:140px 60px;}
+
+        .bg{
+            background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+            url("https://images.unsplash.com/photo-1527980965255-d3b416303d12");
+            background-size:cover;
+            background-position:center;
+            color:#fff;
+            text-align:center;
+        }
+
+        .bg h1{font-size:42px;margin-bottom:25px;}
+        .bg p{max-width:850px;margin:20px auto;font-size:16px;line-height:1.8;}
+
+        .btn{
+            margin-top:30px;
+            padding:12px 30px;
+            background:#f39c12;
+            border:none;
+            color:#fff;
+            border-radius:25px;
+            cursor:pointer;
+        }
+
+      .about{
+    position: relative;
+    background: linear-gradient(
+        rgba(0,0,0,0.65),
+        rgba(0,0,0,0.65)
+    ),
+    url("https://wallpapers.com/images/high/professional-background-4b31fgiuezafrguu.webp");
+    background-size: cover;
+    background-position: center;
+    padding: 90px 60px;
+    color: #ffffff;
+}
+
+.about h2{
+    text-align: center;
+    margin-bottom: 35px;
+    font-size: 32px;
+}
+
+.about p{
+    max-width: 900px;
+    margin: 15px auto;
+    line-height: 1.9;
+    text-align: center;
+    font-size: 15.5px;
+}
+
+        #login{background:#eef1f5;}
+
+        .login-box{
+            max-width:380px;
+            margin:40px auto;
+            background:#fff;
+            padding:30px;
+            border-radius:10px;
+            box-shadow:0 10px 25px rgba(0,0,0,0.2);
+            text-align:center;
+        }
+
+        .login-box input{
+            width:100%;
+            padding:12px;
+            margin-bottom:15px;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <h2>GAN FaceGen</h2>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#login">Login</a></li>
+    </ul>
+</nav>
+
+<section id="home" class="bg">
+    <h1>Realistic Human Face Generation</h1>
+    <p>
+        This system generates highly realistic human face images using
+        Generative Adversarial Networks trained on the CelebA dataset.
+        GANs learn intricate facial features and generate synthetic
+        faces resembling real humans.
+    </p>
+    <a href="#login"><button class="btn">Login</button></a>
+</section>
+
+<section id="about" class="about">
+    <h2>About the Project</h2>
+    <p>
+    This project focuses on generating realistic human face images using
+    Generative Adversarial Networks (GANs), a powerful deep learning
+    framework for synthetic data generation. GANs consist of two neural
+    networks — a Generator and a Discriminator — that compete with each
+    other during training. The generator attempts to create realistic
+    face images from random noise, while the discriminator evaluates
+    whether an image is real or artificially generated.
+</p>
+
+<p style="margin-top:15px">
+    Through continuous adversarial training, both networks improve
+    iteratively, resulting in high-quality synthetic faces that closely
+    resemble real human images. The model is trained on the CelebA
+    dataset, which contains a diverse collection of celebrity face
+    images with variations in pose, expression, lighting, and background.
+    This diversity helps the model learn rich facial features and
+    generate visually convincing results.
+</p>
+
+<p style="margin-top:15px">
+    Realistic face generation has practical applications in several
+    domains such as data augmentation, entertainment, virtual avatars,
+    computer graphics, and privacy-preserving data generation. By
+    synthesizing artificial faces, this system reduces dependence on
+    real personal data while maintaining visual realism. The project
+    demonstrates the potential of GAN-based models in modern artificial
+    intelligence and deep learning research.
+</p>
+</section>
+
+<section id="login">
+    <h2 style="text-align:center;margin-bottom:25px">User Login</h2>
+
+    <div class="login-box">
+        <form method="POST" action="/">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button class="btn" type="submit">Login</button>
+        </form>
+
+        {% if error %}
+            <p style="color:red;margin-top:15px;">{{ error }}</p>
+        {% endif %}
+    </div>
+</section>
+
+</body>
+</html>
