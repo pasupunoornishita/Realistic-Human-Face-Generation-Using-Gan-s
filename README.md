@@ -6,7 +6,7 @@
 ![Status](https://img.shields.io/badge/Status-Completed-success)
 ![License](https://img.shields.io/badge/License-Academic-lightgrey)
 
----
+----
 
 ## ⭐ Project Highlights
 
